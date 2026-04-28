@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  tt-robot:
+    build: .
+    image: tt-robot:latest
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    environment:
+      - DISPLAY=${DISPLAY}
+    restart: unless-stopped
